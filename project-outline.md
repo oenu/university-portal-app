@@ -96,6 +96,7 @@ React
 
 - Front end framework
 
-Bootstrap
+~~Bootstrap~~
+Mantine
 
 - Component library
