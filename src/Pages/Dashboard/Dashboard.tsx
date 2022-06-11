@@ -1,27 +1,13 @@
-import React from "react";
-
-import { useDispatch, useSelector } from "react-redux";
-
-import * as themeActionCreators from "../../Redux/Action-Creators/theme_action_creators";
+import { ActionIcon, AppShell, Group, Header, Navbar } from "@mantine/core";
 import { bindActionCreators } from "@reduxjs/toolkit";
-
-import { store, State } from "../../Redux/store";
-import {
-  ActionIcon,
-  AppShell,
-  Group,
-  Header,
-  Navbar,
-  useMantineColorScheme,
-} from "@mantine/core";
-import { Sun, MoonStars } from "tabler-icons-react";
-import { themeActions } from "../../Redux/Action-Creators";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { MoonStars, Sun } from "tabler-icons-react";
+import ThemeModeButton from "../../features/theme/themeModeButton";
+import { toggleTheme } from "../../features/theme/themeSlice";
+import { RootState } from "../../Redux/store";
 
 function Dashboard() {
-  const dispatch = useDispatch();
-  const theme = useSelector((state: State) => state.theme);
-  const { toggleTheme } = bindActionCreators(themeActions, dispatch);
-
   return (
     <div>
       <AppShell
@@ -35,13 +21,7 @@ function Dashboard() {
           <Header height={50} p="xs">
             <Group position="apart">
               Name
-              <ActionIcon
-                variant="outline"
-                onClick={() => toggleTheme()}
-                title="Toggle color scheme"
-              >
-                {theme.darkMode ? <Sun size={20} /> : <MoonStars size={20} />}
-              </ActionIcon>
+              <ThemeModeButton />
             </Group>
           </Header>
         }

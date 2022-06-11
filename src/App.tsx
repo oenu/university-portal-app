@@ -1,18 +1,15 @@
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
-import { bindActionCreators } from "@reduxjs/toolkit";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-
 import "./App.css";
+import { toggleTheme } from "./features/theme/themeSlice";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Landing from "./Pages/Landing/Landing";
-import { themeActions } from "./Redux/Action-Creators";
-import { State } from "./Redux/store";
+import { RootState } from "./Redux/store";
 
 function App() {
-  const dispatch = useDispatch();
-  const theme = useSelector((state: State) => state.theme);
-  const { toggleTheme } = bindActionCreators(themeActions, dispatch);
+  const theme = useSelector((state: RootState) => state.theme);
+
   return (
     <ColorSchemeProvider
       colorScheme={theme.darkMode ? `dark` : `light`}
