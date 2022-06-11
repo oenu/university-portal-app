@@ -100,3 +100,8 @@ React
 Mantine
 
 - Component library
+
+## Video Notes
+
+Redux With Typescript
+https://www.youtube.com/watch?v=udr2rx_B99w
