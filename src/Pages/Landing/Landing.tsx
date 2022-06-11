@@ -1,7 +1,7 @@
 import { Button, Container, Group, Space, Stack, Title } from "@mantine/core";
 import React from "react";
 import { Link } from "react-router-dom";
-import ThemeModeButton from "../../features/theme/themeModeButton";
+import ThemeModeButton from "../../features/theme/ThemeButton";
 
 // Mantine
 

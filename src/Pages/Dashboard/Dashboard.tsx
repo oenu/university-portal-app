@@ -3,7 +3,7 @@ import { bindActionCreators } from "@reduxjs/toolkit";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MoonStars, Sun } from "tabler-icons-react";
-import ThemeModeButton from "../../features/theme/themeModeButton";
+import ThemeModeButton from "../../features/theme/ThemeButton";
 import { toggleTheme } from "../../features/theme/themeSlice";
 import { RootState } from "../../Redux/store";
 

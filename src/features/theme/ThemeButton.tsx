@@ -8,12 +8,14 @@ import { toggleTheme } from "./themeSlice";
 function ThemeModeButton() {
   const theme = useSelector((state: RootState) => state.theme);
   const dispatch = useDispatch();
+
+  const testToggle = () => {
+    dispatch(toggleTheme());
+  };
   return (
     <ActionIcon
       variant="outline"
-      onClick={() => {
-        dispatch(toggleTheme);
-      }}
+      onClick={() => dispatch(toggleTheme())}
       title="Toggle color scheme"
       m={10}
     >
